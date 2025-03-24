@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Something for You! 🎁</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            background-color: #fff3cd;
+            color: black;
+            padding: 40px;
+        }
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            background-color: #ff5733;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        button:hover {
+            background-color: #c70039;
+        }
+        input {
+            padding: 8px;
+            font-size: 14px;
+            border-radius: 5px;
+            border: 1px solid gray;
+            margin-top: 10px;
+        }
+        #message {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+            color: darkgreen;
+            display: none;
+        }
+        .highlight {
+            color: #d63384;
+            font-weight: bold;
+            font-size: 22px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Afno naam lekha ani hera! 😊</h1>
+    <button onclick="startGame()">Start</button>
+
+    <div id="nameBox" style="display: none;">
+        <h1>Timro naam lekha: 👇</h1>
+        <input type="text" id="nameInput" placeholder="Yaha naam lekha">
+        <button onclick="showMessage()">Submit</button>
+    </div>
+
+    <h1 id="message"></h1>
+
+    <script>
+        function startGame() {
+            document.querySelector("h1").innerText = "Aba timro naam chai k ho? 🤔";
+            document.querySelector("button").style.display = "none";
+            document.getElementById("nameBox").style.display = "block";
+        }
+
+        function showMessage() {
+            let name = document.getElementById("nameInput").value;
+            if (name) {
+                document.getElementById("message").innerHTML = 
+                `🎂 Ohh ${name}! 🤭<br><br> 
+                Janmadin ko dherai dherai subhakamana! 🥳<br> 
+                Aba chai party dinchau ni hai? 🍕😂 <br><br> 
+                <span class="highlight">Timro naam Darshana thiyo ra? Darshi-Pharsi haina ra? 🤣🎃</span>`;
+                document.getElementById("nameBox").style.display = "none";
+                document.getElementById("message").style.display = "block";
+            } else {
+                alert("Kripaya naam lekha!");
+            }
+        }
+    </script>
+
+</body>
+</html>
+
